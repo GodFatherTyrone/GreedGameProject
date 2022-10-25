@@ -1,13 +1,15 @@
 ﻿using System;
+using Unit03.Game;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace GreedGameProject
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Call
-            director
+            Director director = new Director();
+            director.StartGame();
+            return 0;
         }
     }
 }
