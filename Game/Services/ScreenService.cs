@@ -1,0 +1,1 @@
+// output game informaton o
