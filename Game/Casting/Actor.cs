@@ -1,5 +1,6 @@
-///
+/// is the actor
 
+namespace Greed.Game.Casting
 using System;
 
 namespace Greed.Game.Casting
