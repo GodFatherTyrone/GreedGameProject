@@ -4,3 +4,16 @@
 ///
 ///Responsibility: make gems and rocks downward movement
 /// falling object
+
+using System;
+namespace Greed.Game.Casting
+{
+    public class Projectile
+    {
+        int[] ChooseRock = [1,2];
+        public void Addrock()
+        {
+            random chooseRock
+        }
+    }
+}
