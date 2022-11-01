@@ -7,7 +7,7 @@ using Unit04.Game.Directing;
 using Unit04.Game.Services;
 
 
-namespace Unit04
+namespace Greed.Game.Casting
 {
     /// <summary>
     /// The program's entry point.
