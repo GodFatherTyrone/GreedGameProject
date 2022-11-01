@@ -1,8 +1,6 @@
 /// is the actor
 
-namespace Greed.Game.Casting
 using System;
-
 namespace Greed.Game.Casting
 {
     /// <summary>
@@ -106,6 +104,4 @@ namespace Greed.Game.Casting
             }
             this._velocity = velocity;
         }
-
     }
-}
