@@ -1,26 +1,29 @@
-﻿using System;
+﻿namespace Greed;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Unit04.Game.Casting;
-using Unit04.Game.Directing;
-using Unit04.Game.Services;
+using Greed.Game.Directing;
+using Greed.Game.Services;
 
 
-namespace Greed.Game.Casting
+
 {
     /// <summary>
-    /// The program's entry point.
+    /// The program's entry point.COLS
     /// </summary>
     class Program
     {
         private static int FRAME_RATE = 12;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
+        ///public CELL_SIZE For the movment scale for all of Casting
+        public static int CELL_SIZE = 15;
+        ///Public Fontsize for size of all casting
+        public static int FONT_SIZE = 15;
         private static int COLS = 60;
-        private static int ROWS = 40;
+        ///public ROWS for the casting to know where to start(on the x Axis)
+        public static int ROWS = 40;
         private static string CAPTION = "Greed";
         private static string DATA_PATH = "Data/messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
@@ -52,34 +55,11 @@ namespace Greed.Game.Casting
             user.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
             cast.AddActor("user", user);
 
+            ///Andrew, you can get rid of messages
             // load the messages
             List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
 
-            // create the Projectile
-            Random random = new Random();
-            for (int i = 0; i < DEFAULT_PROJECTILE; i++)
-            {
-                string text = ((char)random.Next(33, 126)).ToString();
-                string message = messages[i];
-
-                int x = random.Next(1, COLS);
-                int y = random.Next(1, ROWS);
-                Point position = new Point(x, y);
-                position = position.Scale(CELL_SIZE);
-
-                int r = random.Next(0, 256);
-                int g = random.Next(0, 256);
-                int b = random.Next(0, 256);
-                Color color = new Color(r, g, b);
-
-                Projectile projectile = new Projectile();
-                projectile.SetText(text);
-                projectile.SetFontSize(FONT_SIZE);
-                projectile.SetColor(color);
-                projectile.SetPosition(position);
-                projectile.SetMessage(message);
-                cast.AddActor("projectile", projectile);
-            }
+           
 
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
