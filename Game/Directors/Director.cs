@@ -63,7 +63,7 @@ namespace Greed.Game.Directing
 
             
 
-
+            
 
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
