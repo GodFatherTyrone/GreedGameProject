@@ -11,6 +11,8 @@ namespace Greed.Game.Casting
     /// </para>
     /// </summary>
     public class Actor {
+        private string _text = "";
+        private int _fontSize = 15;
         private Color _color = new Color(255, 255, 255); // white
         private Point _position = new Point(0, 0);
         private Point _velocity = new Point(0, 0);
@@ -32,12 +34,30 @@ namespace Greed.Game.Casting
         }
 
         /// <summary>
+        /// Gets the actor's font size.
+        /// </summary>
+        /// <returns>The font size.</returns>
+        public int GetFontSize()
+        {
+            return _fontSize;
+        }
+
+        /// <summary>
         /// Gets the actor's position.
         /// </summary>
         /// <returns>The position.</returns>
         public Point GetPosition()
         {
             return _position;
+        }
+
+        /// <summary>
+        /// Gets the actor's text.
+        /// </summary>
+        /// <returns>The text.</returns>
+        public string GetText()
+        {
+            return _text;
         }
 
         /// <summary>
@@ -77,6 +97,15 @@ namespace Greed.Game.Casting
             this._color = color;
         }
 
+        public void SetFontSize(int fontSize)
+        {
+            if (fontSize <= 0)
+            {
+                throw new ArgumentException("fontSize must be greater than zero");
+            }
+            this._fontSize = fontSize;
+        }
+
         /// <summary>
         /// Sets the actor's position to the given value.
         /// </summary>
@@ -89,6 +118,20 @@ namespace Greed.Game.Casting
                 throw new ArgumentException("position can't be null");
             }
             this._position = position;
+        }
+
+        /// <summary>
+        /// Sets the actor's text to the given value.
+        /// </summary>
+        /// <param name="text">The given text.</param>
+        /// <exception cref="ArgumentException">When text is null.</exception>
+        public void SetText(string text)
+        {
+            if (text == null)
+            {
+                throw new ArgumentException("text can't be null");
+            }
+            this._text = text;
         }
 
         /// <summary>
