@@ -14,6 +14,7 @@ namespace Greed.Game.Casting
         Program CELL_SIZE = (CELL_SIZE);
         Program FONT_SIZE= FONT_SIZE;
         private string[] pointlist = [-500,-50,-5,5,50,500];
+        private string[] Velocitylist
 
         public void Addrock()
         {
@@ -40,6 +41,7 @@ namespace Greed.Game.Casting
                 projectile.SetFontSize(FONT_SIZE);
                 projectile.SetColor(color);
                 projectile.SetPosition(position);
+                projectile.SetVelocity(velocity);
                 ///pointvalue = adding or subtracting points
                 projectile.Setpointvalue(pointvalue);
 
