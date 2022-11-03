@@ -104,4 +104,4 @@ namespace Greed.Game.Casting
             }
             this._velocity = velocity;
         }
-    }
+    }}
