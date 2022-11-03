@@ -44,14 +44,14 @@ namespace Greed.Game.Directing
         }
 
         /// <summary>
-        /// Gets directional input from the keyboard and applies it to the robot.
+        /// Gets directional input from the keyboard and applies it to the user.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
         {
-            Actor robot = cast.GetFirstActor("robot");
+            Actor user = cast.GetFirstActor("user");
             Point velocity = _keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            user.SetVelocity(velocity);
         }
 
         /// <summary>
@@ -60,28 +60,32 @@ namespace Greed.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
-
-            
-
-            
-
             Actor banner = cast.GetFirstActor("banner");
-            Actor robot = cast.GetFirstActor("robot");
-            List<Actor> artifacts = cast.GetActors("artifacts");
+            Actor user = cast.GetFirstActor("user");
+            List<Actor> projectiles = cast.GetActors("projectiles");
 
             banner.SetText("");
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
-            robot.MoveNext(maxX, maxY);
+            user.MoveNext(maxX, maxY);
 
-            foreach (Actor actor in artifacts)
+            /// check if there is a collision between user and projectile
+            /// add or subtract from the score if it is a rock of a gem that was hit
+            /// also check if they reached the bottom and spawn a new one on top
+            foreach (Actor actor in projectiles)
             {
-                if (robot.GetPosition().Equals(actor.GetPosition()))
+                /// change this to adding or subtracting from the score based on the projectile value
+                /// and kill it if it hit the user and spawn a new one
+                if (user.GetPosition().Equals(actor.GetPosition()))
                 {
-                    Artifact artifact = (Artifact) actor;
-                    string message = artifact.GetMessage();
+                    Projectile projectile = (Projectile) actor;
+                    string message = projectile.GetMessage();
                     banner.SetText(message);
                 }
+                /// checks for it the rock reached the bottom if it did kill it and replace it
+                if (actor.GetPosition)
+
+            
             } 
         }
 

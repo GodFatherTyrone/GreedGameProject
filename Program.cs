@@ -22,7 +22,7 @@ namespace Greed
         public static int CELL_SIZE = 15;
         ///Public Fontsize for size of all casting
         public static int FONT_SIZE = 15;
-        private static int COLS = 60;
+        public static int COLS = 60;
         ///public ROWS for the casting to know where to start(on the x Axis)
         public static int ROWS = 40;
         private static string CAPTION = "Greed";
@@ -58,8 +58,7 @@ namespace Greed
 
             ///Andrew, you can get rid of messages
             // load the messages
-            List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
-
+            
            
 
             // start the game
