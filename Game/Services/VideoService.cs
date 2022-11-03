@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Raylib_cs;
-using Unit04.Game.Casting;
+using Greed.Game.Casting;
 
 
-namespace Unit04.Game.Services
+namespace Greed.Game.Services
 {
     /// <summary>
     /// <para>Outputs the game state.</para>
@@ -63,13 +63,13 @@ namespace Unit04.Game.Services
         /// <param name="actor">The actor to draw.</param>
         public void DrawActor(Actor actor)
         {
-            string text = actor.GetText();
+            //string text = actor.GetText();
             int x = actor.GetPosition().GetX();
             int y = actor.GetPosition().GetY();
-            int fontSize = actor.GetFontSize();
+            //int fontSize = actor.GetFontSize();
             Casting.Color c = actor.GetColor();
             Raylib_cs.Color color = ToRaylibColor(c);
-            Raylib.DrawText(text, x, y, fontSize, color);
+            //Raylib.DrawText(text, x, y, fontSize, color);
         }
 
         /// <summary>

@@ -1,9 +1,9 @@
 //Get imput form keybord
 using Raylib_cs;
-using Unit04.Game.Casting;
+using Greed.Game.Casting;
 
 
-namespace Unit04.Game.Services
+namespace Greed.Game.Services
 {
     /// <summary>
     /// <para>Detects player input.</para>
