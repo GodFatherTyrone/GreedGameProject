@@ -10,11 +10,11 @@ namespace Greed.Game.Casting
 {
     public class Projectile
     {
-        private int COLS = Program.COLS;
+        public int COLS = Program.COLS;
         Program CELL_SIZE = (CELL_SIZE);
-        Program FONT_SIZE= FONT_SIZE;
+        Program FONT_SIZE = new FONT_SIZE;
         private string[] pointlist = [-500,-50,-5,5,50,500];
-        private string[] Velocitylist
+        private string[] velocitylist = [{CELL_SIZE},{2*CELL_SIZE},{3*CELL_SIZE}]
 
         public void Addrock()
         {
@@ -23,7 +23,10 @@ namespace Greed.Game.Casting
             for (int i = 0; i < DEFAULT_PROJECTILE; i++)
             {
                 string text = ((char)random.Next(33, 126)).ToString();
+
                 int pointvalue = random.Next(pointlist);
+
+                int velocity = random.Next(velocitylist);
 
                 int x = random.Next(1, COLS);
                 int y = (ROWS);

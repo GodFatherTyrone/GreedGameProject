@@ -1,13 +1,14 @@
-﻿namespace Greed;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Greed.Game.Casting;
 using Greed.Game.Directing;
 using Greed.Game.Services;
 
 
-
+namespace Greed
 {
     /// <summary>
     /// The program's entry point.COLS
@@ -63,7 +64,7 @@ using Greed.Game.Services;
 
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
-            VideoService videoService 
+            VideoService videoService
                 = new VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE, false);
             Director director = new Director(keyboardService, videoService);
             director.StartGame(cast);
