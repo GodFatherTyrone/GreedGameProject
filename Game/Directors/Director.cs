@@ -79,11 +79,14 @@ namespace Greed.Game.Directing
                 if (user.GetPosition().Equals(actor.GetPosition()))
                 {
                     Projectile projectile = (Projectile) actor;
-                    string message = projectile.GetMessage();
+                    string message = projectile.GetPointValue(); // This will be repurposed to a scoreboard
                     banner.SetText(message);
                 }
                 /// checks for it the rock reached the bottom if it did kill it and replace it
-                if (actor.GetPosition)
+                if (actor.GetPosition().Equals(0)){
+
+
+                }
 
             
             } 

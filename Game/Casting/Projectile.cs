@@ -8,36 +8,48 @@
 /// responsibility is to keep track of point value(if a rock or gem)
 
 using System;
+using System.Collections.Generic;
+
 namespace Greed.Game.Casting
 {
-    public class Projectile
+    public class Projectile : Actor
     {
-        public int[] pointlist = {-500,-50,-5,5,50,500};
+        static Random rnd = new Random();
+        public static int[] points = {-500,-50,50,500};
+        static List<int> pointlist = new List<int>(points);
         private string Name = "I dont know what that was...";
         ///Text is how it looks
-        private string Text = "@";
-        public void Addrock();
+        private string Text = "?";
+        public void AddProjectile() 
         {
-            public int pointvalue = Random.Next(pointlist.Count);
+            ///int index = rnd.Next(pointlist.Count);
+            public int pointvalue = pointlist[rnd.Next(pointlist.Count)];
 
             if (pointvalue > 0)
             {
                 Name = "A Gem";
-                Text = "";
+                Text = "@";
 
             }
-            else if (pointvalue < 0)
+            else if (pointvalue < 0) 
             {
-                Name = "A lump of Coal";
-                Text = "";
+                this.Name = "A lump of Coal";
+                Text = "▣";
+                
             }
             else
             {
                 return;
             }
+
+            public string GetPointValue()
+            {
+                return pointvalue;
+            }
         }
-    }
+    }   
 }
+
 
 
 
