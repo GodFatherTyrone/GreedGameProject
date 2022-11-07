@@ -41,11 +41,12 @@ namespace Greed.Game.Casting
             {
                 return;
             }
-            //     string GetPointValue()
-            // {
-            //     return pointvalue;
-            // }
         }
+        // public void GetPointValue()
+        // {
+        //     return pointvalue;
+        // }
+        
     }   
 }
 
