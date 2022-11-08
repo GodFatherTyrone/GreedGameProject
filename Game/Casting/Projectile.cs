@@ -17,9 +17,9 @@ namespace Greed.Game.Casting
         static Random rnd = new Random();
         public static int[] points = {-500,-50,50,500};
         static List<int> pointlist = new List<int>(points);
-        private string Name = "I dont know what that was...";
+        public string Name = "I dont know what that was...";
         ///Text is how it looks
-        private string Text = "?";
+        public string Text = "?";
         public void AddProjectile() 
         {
             ///int index = rnd.Next(pointlist.Count);
@@ -33,7 +33,7 @@ namespace Greed.Game.Casting
             }
             else if (pointvalue < 0) 
             {
-                this.Name = "A lump of Coal";
+                Name = "A lump of Coal";
                 Text = "▣";
                 
             }
@@ -42,11 +42,6 @@ namespace Greed.Game.Casting
                 return;
             }
         }
-        // public void GetPointValue()
-        // {
-        //     return pointvalue;
-        // }
-        
     }   
 }
 
