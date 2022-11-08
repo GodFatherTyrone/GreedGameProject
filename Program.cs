@@ -56,8 +56,7 @@ namespace Greed
             user.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
             cast.AddActor("user", user);
 
-            ///Andrew, you can get rid of messages
-            // load the messages
+           
             
            
 
