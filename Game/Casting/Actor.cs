@@ -1,4 +1,4 @@
-/// is the actor
+///This is The Actor
 
 using System;
 namespace Greed.Game.Casting
@@ -10,7 +10,8 @@ namespace Greed.Game.Casting
     /// space.
     /// </para>
     /// </summary>
-    public class Actor {
+    public class Actor
+    {
         private string _text = "";
         private int _fontSize = 15;
         private Color _color = new Color(255, 255, 255); // white
@@ -97,6 +98,13 @@ namespace Greed.Game.Casting
             this._color = color;
         }
 
+        /// <summary>
+        /// Sets the actor's font size to the given value.
+        /// </summary>
+        /// <param name="fontSize">The given font size.</param>
+        /// <exception cref="ArgumentException">
+        /// When font size is less than or equal to zero.
+        /// </exception>
         public void SetFontSize(int fontSize)
         {
             if (fontSize <= 0)
@@ -147,4 +155,6 @@ namespace Greed.Game.Casting
             }
             this._velocity = velocity;
         }
-    }}
+
+    }
+}
