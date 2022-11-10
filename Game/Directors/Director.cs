@@ -71,9 +71,9 @@ namespace Greed.Game.Directing
             int maxY = _videoService.GetHeight();
             user.MoveNext(maxX, maxY);
 
-            /// check if there is a collision between user and projectile
-            /// add or subtract from the score if it is a rock of a gem that was hit
-            /// also check if they reached the bottom and spawn a new one on top
+            // check if there is a collision between user and projectile
+            // add or subtract from the score if it is a rock of a gem that was hit
+            // also check if they reached the bottom and spawn a new one on top
             foreach (Actor actor in projectiles)
             {
                 // change this to adding or subtracting from the score based on the projectile value
@@ -90,7 +90,7 @@ namespace Greed.Game.Directing
                     string text = actor.GetText();
                     cast.RemoveActor(text, actor);
                 }
-                /// checks for it the rock reached the if it did kill it and replace it
+                // checks for it the rock reached the if it did kill it and replace it
                 if (actor.GetPosition().Equals(0))
                 {
                     string text = actor.GetText();

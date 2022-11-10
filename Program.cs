@@ -18,12 +18,12 @@ namespace Greed
         private static int FRAME_RATE = 12;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        ///public CELL_SIZE For the movment scale for all of Casting
+        //public CELL_SIZE For the movment scale for all of Casting
         public static int CELL_SIZE = 15;
-        ///Public Fontsize for size of all casting
+        //Public Fontsize for size of all casting
         public static int FONT_SIZE = 15;
         public static int COLS = 60;
-        ///public ROWS for the casting to know where to start(on the x Axis)
+        //public ROWS for the casting to know where to start(on the x Axis)
         public static int ROWS = 40;
         private static string CAPTION = "Greed";
         private static string DATA_PATH = "Data/messages.txt";
@@ -31,10 +31,10 @@ namespace Greed
         private static int DEFAULT_ARTIFACTS = 40;
 
 
-        /// <summary>
-        /// Starts the program using the given arguments.
-        /// </summary>
-        /// <param name="args">The given arguments.</param>
+        // <summary>
+        // Starts the program using the given arguments.
+        // </summary>
+        // <param name="args">The given arguments.</param>
         static void Main(string[] args)
         {
             // create the cast
