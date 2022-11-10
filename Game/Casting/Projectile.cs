@@ -30,13 +30,13 @@ namespace Greed.Game.Casting
             if (Name == "gems")
             {
                 Text = "@";
-                pointvalue = gempointlist[rnd.Next(pointlist.Count)];
+                pointvalue = gempointlist[rnd.Next(gempointlist.Count)];
 
             }
             else if (Name == "rocks") 
             {
                 Text = "▣";
-                pointvalue = rockpointlist[rnd.Next(pointlist.Count)];
+                pointvalue = rockpointlist[rnd.Next(rockpointlist.Count)];
             }
             else
             {
