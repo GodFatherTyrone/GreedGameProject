@@ -61,16 +61,38 @@ namespace Greed.Game.Directing
         // <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
+            //#1 Spawn rocks and gems
+            int gemsNum = cast.GetActors("gems").Count;
+            while (gemsNum < 50) { //makes sure there's always 50 or more projectiles on screen
+                Projectile gem = new Projectile();
+                gem.AddProjectile("gems");
+                cast.AddActor("projectiles", gem);
+                gemsNum++;
+                
+            }
+            int rocksNum = cast.GetActors("rocks").Count;
+            while (rocksNum < 50) {
+                Projectile rock = new Projectile();
+                rock.AddProjectile("rocks");
+                cast.AddActor("projectiles", rock);
+                rocksNum++;
+            }
+           //#2 get all actors form cast
             Actor banner = cast.GetFirstActor("banner");
             Actor user = cast.GetFirstActor("user");
             List<Actor> projectiles = cast.GetActors("projectiles");
-            int projectileCount = projectiles.Count;
+            //#3 updat all actors 
 
             banner.SetText("");
+            
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
             user.MoveNext(maxX, maxY);
-
+            foreach (Actor projectile in projectiles)
+            {
+                projectile.MoveNext(maxX, maxY);
+            }
+            //#4 handle collitions
             // check if there is a collision between user and projectile
             // add or subtract from the score if it is a rock of a gem that was hit
             // also check if they reached the bottom and spawn a new one on top
@@ -91,7 +113,7 @@ namespace Greed.Game.Directing
                     cast.RemoveActor(text, actor);
                 }
                 // checks for it the rock reached the if it did kill it and replace it
-                if (actor.GetPosition().Equals(0))
+                if (actor.GetPosition().Equals(maxY))
                 {
                     string text = actor.GetText();
                     cast.RemoveActor(text, actor);
@@ -102,23 +124,9 @@ namespace Greed.Game.Directing
             
 
             ///Add Actors
-            List<Actor> rocksNum = cast.GetActors("rocks");
-            List<Actor> gemsNum = cast.GetActors("gems");
-
-            while (rocksNum.Count < 50) { //makes sure there's always 50 or more projectiles on screen
-                Projectile gem = new Projectile();
-                gem.AddProjectile("gems");
-                cast.AddActor("gems", gem);
-            }
-            while (gemsNum.Count < 50) {
-                Projectile rock = new Projectile();
-                rock.AddProjectile("rocks");
-                cast.AddActor("rocks", rock);
-            }
-            //while (projectileCount < 50) {
-            //    Projectile projectile = new Projectile();
-            //    cast.AddActor("projectile", projectile);
-            //};
+            
+            
+           
 
             
 

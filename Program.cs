@@ -10,9 +10,9 @@ using Greed.Game.Services;
 
 namespace Greed
 {
-    /// <summary>
-    /// The program's entry point.COLS
-    /// </summary>
+    //<summary>
+    // The program's entry point.COLS
+    // </summary>
     class Program
     {
         private static int FRAME_RATE = 12;

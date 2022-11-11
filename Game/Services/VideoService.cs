@@ -13,6 +13,12 @@ namespace Greed.Game.Services
     /// </summary>
     public class VideoService
     {
+    /// <summary>
+    /// <para>Outputs the game state.</para>
+    /// <para>
+    /// The responsibility of the class of objects is to draw the game state on the screen. 
+    /// </para>
+    /// </summary>
         private int _cellSize = 15;
         private string _caption = "";
         private int _width = 640;
