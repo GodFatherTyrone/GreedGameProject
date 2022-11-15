@@ -16,12 +16,12 @@ namespace Greed
     class Program
     {
         private static int FRAME_RATE = 12;
-        private static int MAX_X = 900;
-        private static int MAX_Y = 600;
+        public static int MAX_X = 900;
+        public static int MAX_Y = 600;
         //public CELL_SIZE For the movment scale for all of Casting
-        public static int CELL_SIZE = 15;
+        public static int CELL_SIZE = 25;
         //Public Fontsize for size of all casting
-        public static int FONT_SIZE = 15;
+        public static int FONT_SIZE = 25;
         public static int COLS = 60;
         //public ROWS for the casting to know where to start(on the x Axis)
         public static int ROWS = 40;
@@ -53,7 +53,7 @@ namespace Greed
             user.SetText("#");
             user.SetFontSize(FONT_SIZE);
             user.SetColor(WHITE);
-            user.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            user.SetPosition(new Point(MAX_X / 2, MAX_Y - 30));
             cast.AddActor("user", user);
 
            

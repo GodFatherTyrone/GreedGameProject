@@ -23,7 +23,7 @@ namespace Greed.Game.Services
         private string _caption = "";
         private int _width = 640;
         private int _height = 480;
-        private int _frameRate = 0;
+        private int _frameRate = 50;
         private bool _debug = false;
 
         /// <summary>
