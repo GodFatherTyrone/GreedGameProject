@@ -94,10 +94,10 @@ namespace Greed.Game.Casting
         // <param name="actor">The actor to remove.</param>
         public void RemoveActor(string group, Actor actor)
         {
-            if (_actors.ContainsKey(group))
-            {
-                _actors[group].Remove(actor);
-            }
+           if (_actors.ContainsKey(group))
+           {
+               _actors[group].Remove(actor);
+           }
         }
     }
 }

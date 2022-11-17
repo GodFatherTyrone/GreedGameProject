@@ -69,7 +69,6 @@ namespace Greed.Game.Directing
                 gem.AddProjectile("gems");
                 cast.AddActor("projectiles", gem);
                 gemsNum++;
-                
             }
             int rocksNum = cast.GetActors("rocks").Count;
             while (rocksNum < 1) {
@@ -99,24 +98,24 @@ namespace Greed.Game.Directing
             // also check if they reached the bottom and spawn a new one on top
             foreach (Actor actor in projectiles)
             {
+                Projectile projectile = (Projectile) actor;
                 // change this to adding or subtracting from the score based on the projectile value
                 // and kill it if it hit the user and spawn a new one
                 if (user.GetPosition().Equals(actor.GetPosition()))
                 {
-                    Projectile projectile = (Projectile) actor;
                     pointTotal += projectile.pointvalue;
                     // This will be repurposed to a scoreboard
                     //Add the rock value to the user banner value
                     //change int to string
                     banner.SetText(pointTotal.ToString());
                     //romove
-                    string text = actor.GetText();
+                    string text = projectile.Name;
                     cast.RemoveActor(text, actor);
                 }
                 // checks for it the rock reached the if it did kill it and replace it
                 if (actor.GetPosition().Equals(maxY))
                 {
-                    string text = actor.GetText();
+                    string text = actor.;
                     cast.RemoveActor(text, actor);
 
                 }
