@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Greed.Game.Casting;
 using Greed.Game.Services;
-
+using System;
 
 namespace Greed.Game.Directing
 {
@@ -63,24 +63,27 @@ namespace Greed.Game.Directing
         {
             ///Add Actors
             //#1 Spawn rocks and gems
-            int gemsNum = cast.GetActors("gems").Count;
-            while (gemsNum < 1) { //makes sure there's always X or more projectiles on screen
+            int gemsNum = 0; //cast.GetActors("gems").Count;
+            while (gemsNum < 5) { //makes sure there's always X or more projectiles on screen
                 Projectile gem = new Projectile();
                 gem.AddProjectile("gems");
-                cast.AddActor("projectiles", gem);
+                cast.AddActor("gems", gem);
                 gemsNum++;
+                //Console.WriteLine(cast.GetActors("gems").Count);
+                //Console.WriteLine(cast.GetActors("projectiles").Count);
             }
-            int rocksNum = cast.GetActors("rocks").Count;
-            while (rocksNum < 1) {
+            int rocksNum = 0; //cast.GetActors("rocks").Count;
+            while (rocksNum < 5) {
                 Projectile rock = new Projectile();
                 rock.AddProjectile("rocks");
-                cast.AddActor("projectiles", rock);
+                cast.AddActor("rocks", rock);
                 rocksNum++;
             }
            //#2 get all actors form cast
             Actor banner = cast.GetFirstActor("banner");
             Actor user = cast.GetFirstActor("user");
-            List<Actor> projectiles = cast.GetActors("projectiles");
+            List<Actor> gems = cast.GetActors("gems");
+            List<Actor> rocks = cast.GetActors("rocks");
             //#3 updat all actors 
 
             banner.SetText("");
@@ -109,13 +112,13 @@ namespace Greed.Game.Directing
                     //change int to string
                     banner.SetText(pointTotal.ToString());
                     //romove
-                    string text = projectile.Name;
+                    string text = projectile.name;
                     cast.RemoveActor(text, actor);
                 }
                 // checks for it the rock reached the if it did kill it and replace it
                 if (actor.GetPosition().Equals(maxY))
                 {
-                    string text = actor.;
+                    string text = projectile.name;
                     cast.RemoveActor(text, actor);
 
                 }

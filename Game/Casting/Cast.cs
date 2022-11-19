@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System;
 
 namespace Greed.Game.Casting
 {
@@ -13,13 +13,12 @@ namespace Greed.Game.Casting
     public class Cast
     {
         private Dictionary<string, List<Actor>> _actors = new Dictionary<string, List<Actor>>();
-
+        private Dictionary<string, List<Projectile>> _projectile = new Dictionary<string, List<Projectile>>();
         // <summary>
         // Constructs a new instance of Cast.
         // </summary>
         public Cast()
         {
-        
         }
 
         // <summary>
@@ -51,6 +50,21 @@ namespace Greed.Game.Casting
             if (_actors.ContainsKey(group))
             {
                 results.AddRange(_actors[group]);
+            }
+            return results;
+        }
+
+        public List<Actor> GetProjectiles(string group, string group2)
+        { // doesn't work
+            //Console.WriteLine(_projectile.Count);
+            List<Actor> results = new List<Actor>();
+            if (_projectile.ContainsKey(group))
+            {
+                results.AddRange(_projectile[group]);
+            }
+            else if (_projectile.ContainsKey(group2))
+            {
+                results.AddRange(_projectile[group2]);
             }
             return results;
         }

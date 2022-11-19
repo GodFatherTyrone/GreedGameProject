@@ -20,7 +20,7 @@ namespace Greed.Game.Casting
         static List<int> pointlist = new List<int>(points);
         static List<int> rockpointlist = new List<int>(rockpoints);
         static List<int> gempointlist = new List<int>(gempoints);
-        public string Name = "I dont know what that was...";
+        public string name = "I dont know what that was...";
         ///Text is how it looks
         public string Text = "?";
         public int pointvalue = 0;
@@ -36,6 +36,7 @@ namespace Greed.Game.Casting
             // pointvalue = pointlist[rnd.Next(pointlist.Count)];
             
             //x = list[index];
+            name = Name;
             
             
             //int x = rnd.Next(0,600);
