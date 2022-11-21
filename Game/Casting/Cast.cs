@@ -13,7 +13,7 @@ namespace Greed.Game.Casting
     public class Cast
     {
         private Dictionary<string, List<Actor>> _actors = new Dictionary<string, List<Actor>>();
-        private Dictionary<string, List<Projectile>> _projectile = new Dictionary<string, List<Projectile>>();
+        //private Dictionary<string, List<Projectile>> _projectile = new Dictionary<string, List<Projectile>>();
         // <summary>
         // Constructs a new instance of Cast.
         // </summary>
@@ -55,16 +55,16 @@ namespace Greed.Game.Casting
         }
 
         public List<Actor> GetProjectiles(string group, string group2)
-        { // doesn't work
-            //Console.WriteLine(_projectile.Count);
+        { // DOES work now
+            //Console.WriteLine(_actors.Count);
             List<Actor> results = new List<Actor>();
-            if (_projectile.ContainsKey(group))
+            if (_actors.ContainsKey(group))
             {
-                results.AddRange(_projectile[group]);
+                results.AddRange(_actors[group]);
             }
-            else if (_projectile.ContainsKey(group2))
+            if (_actors.ContainsKey(group2))
             {
-                results.AddRange(_projectile[group2]);
+                results.AddRange(_actors[group2]);
             }
             return results;
         }

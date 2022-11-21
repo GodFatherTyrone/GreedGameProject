@@ -64,7 +64,7 @@ namespace Greed.Game.Directing
             ///Add Actors
             //#1 Spawn rocks and gems
             int gemsNum = 0; //cast.GetActors("gems").Count;
-            while (gemsNum < 5) { //makes sure there's always X or more projectiles on screen
+            while (gemsNum < 1) { //makes sure there's always X or more projectiles on screen
                 Projectile gem = new Projectile();
                 gem.AddProjectile("gems");
                 cast.AddActor("gems", gem);
@@ -73,7 +73,7 @@ namespace Greed.Game.Directing
                 //Console.WriteLine(cast.GetActors("projectiles").Count);
             }
             int rocksNum = 0; //cast.GetActors("rocks").Count;
-            while (rocksNum < 5) {
+            while (rocksNum < 1) {
                 Projectile rock = new Projectile();
                 rock.AddProjectile("rocks");
                 cast.AddActor("rocks", rock);
@@ -82,9 +82,7 @@ namespace Greed.Game.Directing
            //#2 get all actors form cast
             Actor banner = cast.GetFirstActor("banner");
             Actor user = cast.GetFirstActor("user");
-            List<Actor> gems = cast.GetActors("gems");
-            List<Actor> rocks = cast.GetActors("rocks");
-            //#3 updat all actors 
+            List<Actor> projectiles = cast.GetProjectiles("rocks", "gems");
 
             banner.SetText("");
             
